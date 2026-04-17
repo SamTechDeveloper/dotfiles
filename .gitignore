@@ -1,0 +1,9 @@
+# OS junk
+.DS_Store
+
+# backups / temp
+*~
+*.swp
+
+# logs
+*.log

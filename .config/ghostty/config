@@ -1,0 +1,94 @@
+# This is the configuration file for Ghostty.
+#
+# This template file has been automatically created at the following
+# path since Ghostty couldn't find any existing config files on your system:
+#
+#   /home/krd/.config/ghostty/config
+#
+# The template does not set any default options, since Ghostty ships
+# with sensible defaults for all options. Users should only need to set
+# options that they want to change from the default.
+#
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+#
+# Additionally, each config option is also explained in detail
+# on Ghostty's website, at https://ghostty.org/docs/config.
+
+# Config syntax crash course
+# ==========================
+# # The config file consists of simple key-value pairs,
+# # separated by equals signs.
+# font-family = Iosevka
+# window-padding-x = 2
+#
+# # Spacing around the equals sign does not matter.
+# # All of these are identical:
+# key=value
+# key= value
+# key =value
+# key = value
+#
+# # Any line beginning with a # is a comment. It's not possible to put
+# # a comment after a config option, since it would be interpreted as a
+# # part of the value. For example, this will have a value of "#123abc":
+# background = #123abc
+#
+# # Empty values are used to reset config keys to default.
+# key =
+#
+# # Some config options have unique syntaxes for their value,
+# # which is explained in the docs for that config option.
+# # Just for example:
+# resize-overlay-duration = 4s 200ms
+
+# This automatically copies terminfo to the remote server on connect
+# and sets the correct TERM variables.
+shell-integration-features = ssh-terminfo, ssh-env
+
+# Optional: Force the theme to be identical everywhere
+theme = One Half Dark
+
+# 1. Lie to the server. 
+# CentOS 6 knows what "xterm-256color" is. It does NOT know "xterm-ghostty".
+term = xterm-256color
+
+# 2. Disable the "Injection" feature.
+# Ghostty tries to upload color definitions to the server. 
+# On CentOS 6, this script likely crashes or fails silently. Turn it off.
+#shell-integration-features = no-ssh-terminfo
+shell-integration-features = ssh-terminfo
+shell-integration-features = ssh-env
+
+# Appearance
+#theme = dark:catppuccin-macchiato,light:catppuccin-latte
+font-family = "JetBrainsMono Nerd Font"
+font-size = 14
+shell-integration-features = no-cursor
+cursor-style = block
+cursor-style-blink = true
+font-feature = -liga, -calt, -dlig
+
+# Window Layout
+# window-padding-x = 1
+# window-padding-y = 1
+window-decoration = true
+
+# Behavior
+confirm-close-surface = false
+mouse-hide-while-typing = true
+
+# Multiplies the scroll distance of the mouse wheel
+mouse-scroll-multiplier = 10
+# Options: system, always, never
+#scrollbar = always
+# Set this to your monitor's refresh rate (e.g., 144 or 120)
+#max-frame-rate = 120
+
+env = LANG=en_US.UTF-8
+
+#Disable app-notifications
+app-notifications = no-clipboard-copy
+
+# Enable fullscreen
+keybind = f11=toggle_fullscreen
