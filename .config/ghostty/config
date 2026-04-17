@@ -92,3 +92,6 @@ app-notifications = no-clipboard-copy
 
 # Enable fullscreen
 keybind = f11=toggle_fullscreen
+
+# New Tab in the end.
+window-new-tab-position = end
