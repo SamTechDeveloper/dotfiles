@@ -57,8 +57,8 @@ term = xterm-256color
 # Ghostty tries to upload color definitions to the server. 
 # On CentOS 6, this script likely crashes or fails silently. Turn it off.
 #shell-integration-features = no-ssh-terminfo
-shell-integration-features = ssh-terminfo
-shell-integration-features = ssh-env
+#shell-integration-features = ssh-terminfo
+#shell-integration-features = ssh-env
 
 # Appearance
 #theme = dark:catppuccin-macchiato,light:catppuccin-latte
