@@ -84,8 +84,21 @@
 
 # 21APR2026:
 # Single Order Bot changes. 
-- Tested working for Raj changes.
-- Single order price zero allow or not ? If allowed what checks should be present.
-- Update code from herambs tbt_nfo_single_order add dpr and validation_price checks for modify.
+- Tested working for Raj changes. [x]
+- Single order price zero allow or not ? If allowed what checks should be present. [x]
+- Update code from herambs tbt_nfo_single_order add dpr and validation_price checks for modify. [x]
 - Check all todo.
-- Use best_percent for modify to become best or opposite.
+- Use best_percent for modify to become best or opposite. [x]
+
+---
+
+# 22APR2026:
+## MTS:
+- Pre-open data in bot issue started wind phase timer which started bot action instead of waiting for 20 seconds initial sleepage time.
+## BOX: Single order testing:
+- Tested new code for single order with price/zero and for multiple rounds. 
+- Fixed partial trade qty value issue in eti test file.
+- Tested working for partial trade. 
+- Checked all FIXME code.
+
+---
