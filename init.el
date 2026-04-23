@@ -73,19 +73,19 @@
 (add-to-list 'auto-mode-alist '("/Makefile[^/]*\\'" . makefile-mode))
 
 ;; Theme Starts ==
-
-(load-theme 'doom-one t)
+(setq catppuccin-flavor 'mocha) ; or 'latte, 'macchiato, or 'mocha
+(load-theme 'catppuccin t)
+;(load-theme 'doom-one t)
 (defvar my/doom-one-current 'dark
   "Current doom-one theme variant.")
 ;; (load-theme 'doom-gruvbox-light t)
 ;; (defvar my/doom-one-current 'light
 ;;   "Current doom-one theme variant.")
 
-(defun my/apply-comment-color ()
-  (set-face-attribute 'font-lock-comment-face nil
-                      :foreground "coral1"))
-
-(add-hook 'after-load-theme-hook #'my/apply-comment-color)
+;; (defun my/apply-comment-color ()
+;;   (set-face-attribute 'font-lock-comment-face nil
+;;                       :foreground "coral1"))
+;;(add-hook 'after-load-theme-hook #'my/apply-comment-color)
 
 (defun my/toggle-doom-one ()
   "Toggle between doom-one and doom-one-light."
@@ -98,14 +98,15 @@
         (load-theme 'doom-gruvbox-light t)
         (setq my/doom-one-current 'light))
     (progn
-      (load-theme 'doom-one t)
-      (my/apply-comment-color)
+      ;;(load-theme 'doom-one t)
+      (load-theme 'catppuccin t)
+      ;;(my/apply-comment-color)
       (setq my/doom-one-current 'dark))))
 
 (global-set-key (kbd "<f8>") #'my/toggle-doom-one)
 (setq my/doom-one-current 'dark)
 ;; Apply once on startup
-(my/apply-comment-color)
+;;(my/apply-comment-color)
 
 ;; Theme Ends ==
 
@@ -132,9 +133,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   '("0325a6b5eea7e5febae709dab35ec8648908af12cf2d2b569bedc8da0a3a81c1" "e39c5b887bfee00097a92c660c7ea4e3d37543be4a638ccc2adceb61ebdf784e" "5f78a36d69bb8df702a8f6ef8dd523da044050872d3ab9bbc265dbe250d4b0e4" "18a1d83b4e16993189749494d75e6adb0e15452c80c431aca4a867bcc8890ca9" "5aedf993c7220cbbe66a410334239521d8ba91e1815f6ebde59cecc2355d7757" "75b371fce3c9e6b1482ba10c883e2fb813f2cc1c88be0b8a1099773eb78a7176" "5244ba0273a952a536e07abaad1fdf7c90d7ebb3647f36269c23bfd1cf20b0b8" "f1e8339b04aef8f145dd4782d03499d9d716fdc0361319411ac2efc603249326" "2ab8cb6d21d3aa5b821fa638c118892049796d693d1e6cd88cb0d3d7c3ed07fc" "e1df746a4fa8ab920aafb96c39cd0ab0f1bac558eff34532f453bd32c687b9d6" "5c7720c63b729140ed88cf35413f36c728ab7c70f8cd8422d9ee1cedeb618de5" "8d3ef5ff6273f2a552152c7febc40eabca26bae05bd12bc85062e2dc224cde9a" "088cd6f894494ac3d4ff67b794467c2aa1e3713453805b93a8bcb2d72a0d1b53" "87fa3605a6501f9b90d337ed4d832213155e3a2e36a512984f83e847102a42f4" "21d2bf8d4d1df4859ff94422b5e41f6f2eeff14dd12f01428fa3cb4cb50ea0fb" "5c8a1b64431e03387348270f50470f64e28dfae0084d33108c33a81c1e126ad6" "0f1341c0096825b1e5d8f2ed90996025a0d013a0978677956a9e61408fcd2c77" "b7a09eb77a1e9b98cafba8ef1bd58871f91958538f6671b22976ea38c2580755" default))
+   '("c4df9006b9eb32599d758800a32f3487c2cdf13826084511783b47d419024af2" "0325a6b5eea7e5febae709dab35ec8648908af12cf2d2b569bedc8da0a3a81c1" "e39c5b887bfee00097a92c660c7ea4e3d37543be4a638ccc2adceb61ebdf784e" "5f78a36d69bb8df702a8f6ef8dd523da044050872d3ab9bbc265dbe250d4b0e4" "18a1d83b4e16993189749494d75e6adb0e15452c80c431aca4a867bcc8890ca9" "5aedf993c7220cbbe66a410334239521d8ba91e1815f6ebde59cecc2355d7757" "75b371fce3c9e6b1482ba10c883e2fb813f2cc1c88be0b8a1099773eb78a7176" "5244ba0273a952a536e07abaad1fdf7c90d7ebb3647f36269c23bfd1cf20b0b8" "f1e8339b04aef8f145dd4782d03499d9d716fdc0361319411ac2efc603249326" "2ab8cb6d21d3aa5b821fa638c118892049796d693d1e6cd88cb0d3d7c3ed07fc" "e1df746a4fa8ab920aafb96c39cd0ab0f1bac558eff34532f453bd32c687b9d6" "5c7720c63b729140ed88cf35413f36c728ab7c70f8cd8422d9ee1cedeb618de5" "8d3ef5ff6273f2a552152c7febc40eabca26bae05bd12bc85062e2dc224cde9a" "088cd6f894494ac3d4ff67b794467c2aa1e3713453805b93a8bcb2d72a0d1b53" "87fa3605a6501f9b90d337ed4d832213155e3a2e36a512984f83e847102a42f4" "21d2bf8d4d1df4859ff94422b5e41f6f2eeff14dd12f01428fa3cb4cb50ea0fb" "5c8a1b64431e03387348270f50470f64e28dfae0084d33108c33a81c1e126ad6" "0f1341c0096825b1e5d8f2ed90996025a0d013a0978677956a9e61408fcd2c77" "b7a09eb77a1e9b98cafba8ef1bd58871f91958538f6671b22976ea38c2580755" default))
  '(package-selected-packages
-   '(charmap gruvbox-theme latex-pretty-symbols latex-unicode-math-mode list-unicode-display math-symbol-lists math-symbols org-bullets solarized-gruvbox-theme suscolors-theme ucs-utils unicode-emoticons unicode-fonts xmlunicode expand-region avy hl-todo rainbow-delimiters which-key imenu-list rainbow-mode eldoc-box doom-themes popup flycheck-eglot auto-dark bash-completion format-sql indian-ext json-mode pydoc python-mode csv-mode evil markdown-mode markdown-preview-mode doom-modeline auto-complete use-package)))
+   '(apache-mode adwaita-dark-theme catppuccin-theme charmap gruvbox-theme latex-pretty-symbols latex-unicode-math-mode list-unicode-display math-symbol-lists math-symbols org-bullets solarized-gruvbox-theme suscolors-theme ucs-utils unicode-emoticons unicode-fonts xmlunicode expand-region avy hl-todo rainbow-delimiters which-key imenu-list rainbow-mode eldoc-box doom-themes popup flycheck-eglot auto-dark bash-completion format-sql indian-ext json-mode pydoc python-mode csv-mode evil markdown-mode markdown-preview-mode doom-modeline auto-complete use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

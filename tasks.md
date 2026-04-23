@@ -102,3 +102,12 @@
 - Checked all FIXME code.
 
 ---
+
+# 23APR2026:
+## MTS:
+- Packet drop issue. Reduced correct_mbp printing in eobi. Fixed 9:15 check separated 9:16 check for snapshot recovery. Fixed fcast fetch token, no details bug.
+- Updated ops to 980 from 850.
+## BOX Testing:
+- Tested with data player to chekc working of new box strategy code. Checked order book price/qty depth validations.
+- Discussed testing of box in live server with c2c setup and changes required to run both setups simultaneously.
+
