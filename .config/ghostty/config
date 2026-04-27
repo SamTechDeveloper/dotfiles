@@ -47,8 +47,8 @@
 shell-integration-features = ssh-terminfo, ssh-env
 
 # Optional: Force the theme to be identical everywhere
-#theme = One Half Dark
-theme = Catppuccin Mocha
+theme = Atom One Dark
+#theme = Catppuccin Mocha
 
 # 1. Lie to the server. 
 # CentOS 6 knows what "xterm-256color" is. It does NOT know "xterm-ghostty".

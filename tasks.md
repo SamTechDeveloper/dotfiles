@@ -100,9 +100,7 @@
 - Fixed partial trade qty value issue in eti test file.
 - Tested working for partial trade. 
 - Checked all FIXME code.
-
 ---
-
 # 23APR2026:
 ## MTS:
 - Packet drop issue. Reduced correct_mbp printing in eobi. Fixed 9:15 check separated 9:16 check for snapshot recovery. Fixed fcast fetch token, no details bug.
@@ -110,4 +108,22 @@
 ## BOX Testing:
 - Tested with data player to chekc working of new box strategy code. Checked order book price/qty depth validations.
 - Discussed testing of box in live server with c2c setup and changes required to run both setups simultaneously.
-
+---
+# 24APR2026:
+## MTS:
+- Checked eobi 9:15 time check issue. Made changes to fix time to 9:14. Tested working of binary.
+## BOX Testing:
+- Discussed pending work with Raj and running simulation on live server with changes in database.
+---
+# 27APR2026:
+## BOX:
+- Discussed with team regarding using of c2c server together with bfo box setup. 
+- Discussed db, logs, db ltcp path changes and issues.
+- Prepared box setup on .25 server. Compiled and checked issues while running.
+- Discussed with team reagarding Box gui:
+1. Long, short type display in box execution report.
+2. Show all opp box running for particular box.
+3. Traded opp box needs to be checked if multiple opp box running. Show in multiple lines opp boxes.
+4. What if strategy sq off 1st leg itself? Then will it display properly and what about its opposite box will it show more quantity if it gets trade ?
+5. Only single order otr window.
+6. Development of box report using bootstrap js.
