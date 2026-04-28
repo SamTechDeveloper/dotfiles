@@ -127,3 +127,16 @@
 4. What if strategy sq off 1st leg itself? Then will it display properly and what about its opposite box will it show more quantity if it gets trade ?
 5. Only single order otr window.
 6. Development of box report using bootstrap js.
+
+---
+# 28APR2026:
+## BOX on C2C server:
+### Database and other changes done to run Box setup
+1. Updated BFO termctcl value in DEALER_MASTER.
+1. Updated dealer and client rms table columns for BFO and updated BFO RMS values.
+2. Added tables: BOX_BFO GENERIC_4L_STRATEGY BOX_EXECUTION_REPORT (no-data)
+3. Addedd BSE_ETI_MAPPING.csv file in /home/krd.
+4. Updated BFO_SEC_MAP table.
+5. Added /home/krd/.gdbinit file to improve productivity. (automatic b exit and avoid debuginfo download question)
+6. Inserted into STRATEGY_MASTER table for BFO SINGLE_ORDER and 3L strategies.
+7. Added column SUB_CLIENT_ID in BOT_PARAM.
