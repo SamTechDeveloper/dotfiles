@@ -78,6 +78,7 @@
 
 (add-to-list 'auto-mode-alist '("/Makefile[^/]*\\'" . makefile-mode))
 
+(use-package doom-themes)
 ;; Theme Starts ==
 ;; (setq catppuccin-flavor 'mocha) ; or 'latte, 'macchiato, or 'mocha
 ;; (load-theme 'catppuccin t)
