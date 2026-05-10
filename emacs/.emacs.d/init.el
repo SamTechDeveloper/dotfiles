@@ -1,4 +1,3 @@
-
 ;;; package -- Summary
 
 ;;; Commentary:
@@ -60,8 +59,8 @@
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (when (fboundp 'tooltip-mode)    (tooltip-mode    -1))
 
-(require 'auto-complete)
-(global-auto-complete-mode t)
+(use-package auto-complete)
+;;(global-auto-complete-mode t)
 
 (require 'which-func)
 (which-function-mode t)
@@ -78,11 +77,13 @@
 
 (add-to-list 'auto-mode-alist '("/Makefile[^/]*\\'" . makefile-mode))
 
-(use-package doom-themes)
 ;; Theme Starts ==
-;; (setq catppuccin-flavor 'mocha) ; or 'latte, 'macchiato, or 'mocha
-;; (load-theme 'catppuccin t)
-(load-theme 'doom-one t)
+;;(use-package doom-themes)
+;;(load-theme 'doom-one t)
+(use-package catppuccin-theme)
+(setq catppuccin-flavor 'mocha) ; or 'latte, 'macchiato, or 'mocha
+(load-theme 'catppuccin t)
+
 (defvar my/doom-one-current 'dark
   "Current doom-one theme variant.")
 ;; (load-theme 'doom-gruvbox-light t)
@@ -105,9 +106,9 @@
         (load-theme 'doom-gruvbox-light t)
         (setq my/doom-one-current 'light))
     (progn
-      (load-theme 'doom-one t)
+      ;;(load-theme 'doom-one t)
       ;;(my/apply-comment-color)
-      ;;(load-theme 'catppuccin t)
+      (load-theme 'catppuccin t)
       (setq my/doom-one-current 'dark))))
 
 (global-set-key (kbd "<f8>") #'my/toggle-doom-one)
@@ -144,7 +145,7 @@
 
 ;; 2. Multicolored Highlight Function
 (defun my-apply-highlights ()
-  "Adds specific colors to different developer tags."
+  "This will add specific colors to different developer tags."
   (font-lock-add-keywords nil
     '(("\\<\\(FIXME\\|XXX\\|DOUBT\\|TESTING\\|BUG\\):" 1 '(:foreground "#FF3131" :weight bold) t)
       ("\\<\\(WARN\\):"        1 '(:foreground "yellow" :weight bold) t)
@@ -247,5 +248,6 @@
 (use-package expand-region
   :bind ("C-=" . er/expand-region))
 
+(use-package rainbow-mode)
 
-
+;;; init.el ends here
