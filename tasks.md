@@ -133,10 +133,41 @@
 ## BOX on C2C server:
 ### Database and other changes done to run Box setup
 1. Updated BFO termctcl value in DEALER_MASTER.
-1. Updated dealer and client rms table columns for BFO and updated BFO RMS values.
-2. Added tables: BOX_BFO GENERIC_4L_STRATEGY BOX_EXECUTION_REPORT (no-data)
-3. Addedd BSE_ETI_MAPPING.csv file in /home/krd.
-4. Updated BFO_SEC_MAP table.
-5. Added /home/krd/.gdbinit file to improve productivity. (automatic b exit and avoid debuginfo download question)
-6. Inserted into STRATEGY_MASTER table for BFO SINGLE_ORDER and 3L strategies.
-7. Added column SUB_CLIENT_ID in BOT_PARAM.
+2. Updated dealer and client rms table columns for BFO and updated BFO RMS values.
+3. Added tables: BOX_BFO GENERIC_4L_STRATEGY BOX_EXECUTION_REPORT (no-data)
+4. Addedd BSE_ETI_MAPPING.csv file in /home/krd.
+5. Updated BFO_SEC_MAP table.
+6. Added /home/krd/.gdbinit file to improve productivity. (automatic b exit and avoid debuginfo download question)
+7. Inserted into STRATEGY_MASTER table for BFO SINGLE_ORDER and 3L strategies.
+8. Added column SUB_CLIENT_ID in BOT_PARAM.
+9. Tested single order bot.
+
+---
+# 29APR2026:
+## Atharva review.
+## BOX:
+### Discussion:
+1. BER table use or not ? Use 4L table + bot trade ?
+2. Bot no issue between c2c and box setup.
+3. Separate DATABASE for bfo setup.
+4. Use scanner for csv generator.
+5. CSV generator strk1 always less than strk2.
+### Work:
+- Checked single order query for changes.
+- Checking of database name related issues.
+- Made changes for db name in bot interface, fcast, eobi, tick-nfo-main.
+---
+# 30APR2026:
+## Box:
+- Tested box setup changes for separate logs and database connection.
+- Tested Single order bot.
+---
+# 12MAY2026:
+## Box:
+- New bfo upload.
+- Tested strategy.
+- Checked eobi ltp issue on restart. (Take ltp from nfcast ?)
+- Checked round complete values and fixed buy/sell print logs.
+- Discussed margin qty calculations with Rupesh.
+- Tested margin freeup/allowed/disallowed for long/short bots.
+
