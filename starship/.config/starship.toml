@@ -1,0 +1,57 @@
+# Minimal One-liner — ultra-clean, no background fills
+# Works with any monospace font
+
+format = """
+[┌─](fg:#cba6f7)\
+[$time](fg:#8b949e)\
+[$username](fg:green)\
+[@](fg:#8b949e)\
+[$hostname](fg:blue)\
+[:](fg:#8b949e)\
+[$directory](fg:#d2a8ff)\
+[$git_branch](fg:#f0883e)\
+$line_break\
+[└─](fg:#cba6f7)\
+$character"""
+
+[username]
+style_user = "fg:green"
+format = "[$user]($style)"
+show_always = true
+
+[hostname]
+style = "fg:blue"
+format = "[$hostname]($style)"
+ssh_only = false
+
+[time]
+disabled = false
+style = "fg:#8b949e"
+format = "[$time ]($style)"
+time_format = "[%H:%M:%S]"
+
+[directory]
+style = "fg:#d2a8ff"
+format = "[$path]($style)"
+truncation_length = 100
+truncate_to_repo = false
+home_symbol = "~"
+
+[git_branch]
+symbol = ""
+style = "fg:#f0883e"
+format = "[ \\[$symbol$branch$ahead_behind\\]]($style)"
+
+[git_status]
+style = "fg:#f0883e"
+format = "[$all_status]($style)"
+modified = ""
+staged = ""
+untracked = ""
+ahead = "↑"
+behind = "↓"
+diverged = "↕"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
