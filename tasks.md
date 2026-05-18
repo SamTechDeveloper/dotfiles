@@ -170,4 +170,12 @@
 - Checked round complete values and fixed buy/sell print logs.
 - Discussed margin qty calculations with Rupesh.
 - Tested margin freeup/allowed/disallowed for long/short bots.
+---
 
+# 18MAY2026:
+## Box:
+- TODO:
+1. Order book print PE <-> CE.
+2. Maker and Taker identity print.
+## CRS NOTIS:
+- Notis new setup on new machine. (30 mins)
