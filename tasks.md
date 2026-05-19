@@ -179,3 +179,11 @@
 2. Maker and Taker identity print.
 ## CRS NOTIS:
 - Notis new setup on new machine. (30 mins)
+---
+# 19MAY2026:
+## Box:
+- Made changes to print box details about maker and takers.
+- Discussed margin issue due to previous positions with Rupesh.
+- Checked issue with maker leg bot param values.
+- Fixed dpr zero check.
+

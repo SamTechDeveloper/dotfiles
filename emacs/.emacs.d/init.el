@@ -249,5 +249,6 @@
   :bind ("C-=" . er/expand-region))
 
 (use-package rainbow-mode)
+(use-package markdown-mode)
 
 ;;; init.el ends here
