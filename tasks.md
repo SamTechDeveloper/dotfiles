@@ -186,4 +186,25 @@
 - Discussed margin issue due to previous positions with Rupesh.
 - Checked issue with maker leg bot param values.
 - Fixed dpr zero check.
+---
+# 20MAY2026:
+## Box:
+- Maker not fired due to stale data
+- Fire one reversal
+- Reversal closeout step B
+- Reversal closeout step C
+- Reversal Emergency stop DPR timeout
+- Cancel Maker if trade conf not received
+- Takers closeout step B
+- Takers closeout step C
+- Takers Emergency stop DPR timeout
+- Takers Trade on closeout step C
+- Takers t2 t3 trade + t4 Cancel (bot stop DPR timeout)
+- Buy/Sell maker quote price below/above 5th depth
+- T2 anad T4 Order modified same price on closeout step B
+---
+# 21MAY2026:
+## Box:
+- Reversal complete flag issue.
+- Multiple bot seg fault issue.
 
