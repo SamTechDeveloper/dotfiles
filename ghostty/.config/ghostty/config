@@ -64,7 +64,7 @@ term = xterm-256color
 # Appearance
 #theme = dark:catppuccin-macchiato,light:catppuccin-latte
 font-family = "JetBrainsMono Nerd Font"
-font-size = 14
+font-size = 13.5
 shell-integration-features = no-cursor
 cursor-style = block
 cursor-style-blink = true

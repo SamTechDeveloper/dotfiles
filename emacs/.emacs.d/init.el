@@ -248,7 +248,9 @@
 (use-package expand-region
   :bind ("C-=" . er/expand-region))
 
-(use-package rainbow-mode)
 (use-package markdown-mode)
+(use-package rainbow-mode
+  :ensure t
+  :hook ((css-mode html-mode web-mode prog-mode conf-mode)  . rainbow-mode))
 
 ;;; init.el ends here
