@@ -208,3 +208,25 @@
 - Reversal complete flag issue.
 - Multiple bot seg fault issue.
 
+---
+# 29JUN2026:
+## Box:
+- BFO Box llm strategy testing  for takers throttle rejection and bot stop issue. 
+- Fixed eti test function calls to test for rejections properly.
+- Checked bot lock issue on takers rejections. Unable to find exact reason. Checked logs and code to find whats taking lock.
+## MTS:
+- Checked MTS BFO loss trades issue. Mahesh sir increase max allowed price limit 1000 which lead to modifications over 700 Rs for bidding legs and larger got late trades in 2,3,4 leg orders due to price issue. 
+- Made changes to pause bot for 5 seconds which such increase in price is goind to happen instead of stopping bot as requested by sir.
+## NFO Datastore:
+- Discussed NFO fcast data changes for new transcodes with Atharva for NFO data store component. 
+- Explained required changes and explained working of MC_L/ MC_LL macros which needs to be used in code to make adjustments.
+
+---
+# 01JUL2026:
+## Antique Extranet:
+- Checked working for SLB market. Taking too much time to finish.
+## MTS BFO:
+- Checked logs to verify working of changes for bot pause.
+## Box:
+- Tested throttle rejection on takers found issue in handle_takers_live and advance_closeout_leg which does not re-order takers or reversal.
+- Research for cases using claude.
