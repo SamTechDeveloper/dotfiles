@@ -230,3 +230,5 @@
 ## Box:
 - Tested throttle rejection on takers found issue in handle_takers_live and advance_closeout_leg which does not re-order takers or reversal.
 - Research for cases using claude.
+- Updated strategy with new handle_takers_live code which will place new orders for rejected takers or fire reversal when no takers are filled.
+
