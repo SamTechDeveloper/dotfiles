@@ -142,6 +142,7 @@
 (add-to-list 'auto-mode-alist '("\\.hpp\\'" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.cgi\\'" . cperl-mode))
 (add-to-list 'auto-mode-alist '("\\.pm\\'"  . cperl-mode))
+(add-to-list 'auto-mode-alist '("\\.pl\\'"  . cperl-mode))
 
 ;; 2. Multicolored Highlight Function
 (defun my-apply-highlights ()
@@ -157,6 +158,8 @@
 (add-hook 'c++-mode-hook   'my-apply-highlights)
 (add-hook 'cperl-mode-hook 'my-apply-highlights)
 (add-hook 'perl-mode-hook  'my-apply-highlights)
+
+(setq treesit-font-lock-level 4)
 
 (defun insert-current-date ()
   "Insert current date in ISO format."

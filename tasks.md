@@ -232,3 +232,12 @@
 - Research for cases using claude.
 - Updated strategy with new handle_takers_live code which will place new orders for rejected takers or fire reversal when no takers are filled.
 
+---
+# 03JUL2026:
+## Antique Extranet:
+- Checked working for SLB and FO market. Taking too much time to finish. Con call with NSE for the issue.
+## Box:
+- Fixed llm code for retry reversal and takers rejected orders. 
+- Tested self trade reject again and fixed interference of throttle/direct rejection block for order id == 0.
+- Checked llm code to verify steps/ladder for takers and bot stop when retry is exhausted.
+
