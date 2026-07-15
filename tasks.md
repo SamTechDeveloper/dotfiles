@@ -233,7 +233,7 @@
 - Updated strategy with new handle_takers_live code which will place new orders for rejected takers or fire reversal when no takers are filled.
 
 ---
-# 03JUL2026:
+# 02JUL2026:
 ## Antique Extranet:
 - Checked working for SLB and FO market. Taking too much time to finish. Con call with NSE for the issue.
 ## Box:
