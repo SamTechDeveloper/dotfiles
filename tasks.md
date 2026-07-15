@@ -241,3 +241,10 @@
 - Tested self trade reject again and fixed interference of throttle/direct rejection block for order id == 0.
 - Checked llm code to verify steps/ladder for takers and bot stop when retry is exhausted.
 
+---
+# 15JUL2026:
+## Box:
+- Discussed with Rupesh about all gui tasks list.
+- SQ OFF all button testing.
+- Prepared setup on 116, checked working of binaries and fixed mono compile issues.
+
