@@ -248,3 +248,31 @@
 - SQ OFF all button testing.
 - Prepared setup on 116, checked working of binaries and fixed mono compile issues.
 
+---
+# 16JUL2026:
+## Box:
+- Tested working of redis multicast and new f7 m2m report.
+- Discussed with Rupesh.
+
+---
+# 17JUL2026:
+- Prepared all binaries with proper native and uploaded on lares server.
+- Tested working of BOD process start/stop files.
+- Fixed database name issue in BOD scripts for CHANAKYA_BFO database.
+- Checked working of monolith setup.
+- Added routes and configure net card. Checked cpu usage.
+
+---
+# 20JUL2026:
+## LARES BOX:
+- Fixed eti test and live compilation issue. Made changes in function call and Makefile.
+- Checked eobi data in bots. Verified data of illiquid scrips. Checked issue with eobi snapshot server.
+- Fixed start/stop scripts for BOD/EOD process.
+- Tested for login and provided error log to sonalika maam.
+
+---
+# 21JUL2026:
+## LARES BOX:
+- Checked login issue and fixed backup script. 
+- Added printing in snapshot component to debug data.
+
