@@ -276,3 +276,12 @@
 - Checked login issue and fixed backup script. 
 - Added printing in snapshot component to debug data.
 
+---
+# 22JUL2026:
+## LARES BOX:
+- Worked to fix mono and eobi snapshot component disconnect issue.
+- Solved seg fault in snap shot component.
+- Checked all components were ready and waiting for algoid/client details from lares.
+- Checked all pages are running for demo to trader.
+
+
