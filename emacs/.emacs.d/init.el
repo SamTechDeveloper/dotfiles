@@ -256,4 +256,7 @@
   :ensure t
   :hook ((css-mode html-mode web-mode prog-mode conf-mode)  . rainbow-mode))
 
+(use-package git)
+(use-package git-gutter)
+
 ;;; init.el ends here

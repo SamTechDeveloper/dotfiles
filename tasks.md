@@ -284,4 +284,11 @@
 - Checked all components were ready and waiting for algoid/client details from lares.
 - Checked all pages are running for demo to trader.
 
+---
+# 23JUL2026:
+## LARES BOX:
+- redis start stop command and login checked.
+## C2C CAS broadcast changes:
+- C2C CAS broadcast changes inc c2c ncm/bcm in lares-db-bse-colo and lares-db-bse-colo-2.
+
 
