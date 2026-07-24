@@ -296,5 +296,4 @@
 ## C2C CAS:
 - lares-db-bse-colo
 - elixir raj setups CAS
-
-
+- meeting, discussion on box
