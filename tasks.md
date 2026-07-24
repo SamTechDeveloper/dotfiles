@@ -291,4 +291,10 @@
 ## C2C CAS broadcast changes:
 - C2C CAS broadcast changes inc c2c ncm/bcm in lares-db-bse-colo and lares-db-bse-colo-2.
 
+---
+# 24JUL2026:
+## C2C CAS:
+- lares-db-bse-colo
+- elixir raj setups CAS
+
 
