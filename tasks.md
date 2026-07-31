@@ -297,3 +297,27 @@
 - lares-db-bse-colo
 - elixir raj setups CAS
 - meeting, discussion on box
+
+---
+# 27JUL2026:
+## BOX:
+- Packet drop testing with printing.
+- Checked logs for packet drop counts.
+- Delete unwanted logs to save disk space.
+## Elixir CAS changes.
+
+---
+# 28JUL2026:
+## BOX:
+- Packet drop testing with and without print.
+- Tested with print for 40 bots got no drop.
+- 600 bots with 4 line print getting drops.
+## Elixir CAS change 99 setup.
+## CRS C2C-170 CAS changes.
+
+---
+# 29JUL2026:
+## CRS C2C-170 CAS changes.
+## DATASTORE:
+- Checked Atharva's code for CAS changes in ncm, nfo and bcm datastore components.
+
