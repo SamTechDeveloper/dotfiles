@@ -321,3 +321,7 @@
 ## DATASTORE:
 - Checked Atharva's code for CAS changes in ncm, nfo and bcm datastore components.
 
+---
+# 20AUG2026:
+## LARES BOX:
+- Live demo to trader and started strategy bots.
