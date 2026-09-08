@@ -325,3 +325,35 @@
 # 20AUG2026:
 ## LARES BOX:
 - Live demo to trader and started strategy bots.
+
+-----
+# 31AUG2026:
+## Lares Box:
+- Helped trader with gui issues and doubts. 
+- Checked logs for slippages and latency issues. Discussed with Raj and Pravin.
+- Discussed issues and requirements with Patel sir and Pravin with Trader.
+- Made changes in box gui to display lot number.
+
+---
+# 01SEP2026:
+## Lares Box:
+- Checked slippage issues.
+- Made changes in box gui to update lot size in database for box strategy.
+- 
+---
+
+# 07SEP2026:
+## Lares Box:
+- Checked issue with loss on reversal trades.
+- Made changes in profitability check to use net <= 0 instead of net < -(wind_rate).
+
+---
+# 08SEP2026:
+## Lares Box:
+- Fixed sq pending order invalid display issue.
+- Checked loss in reversal trades.
+- Checked latency issues.
+- Discussed cost calc with Patel sir.
+- Changed profitability check to 1 Rs to reduce loss on reversal.
+
+---
