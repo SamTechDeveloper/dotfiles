@@ -341,7 +341,18 @@
 - Made changes in box gui to update lot size in database for box strategy.
 - 
 ---
+# 04SEP2026:
+## Lares Box:
+- CAS changes.
+## MTS Box:
+- CAS changes.
+## BSE Datastore CAS changes.
 
+---
+# 05SEP2026:
+## BSE BFO CAS mock and EOBI stream 15,16 changes. Lares, MTS and Datastore.
+
+---
 # 07SEP2026:
 ## Lares Box:
 - Checked issue with loss on reversal trades.

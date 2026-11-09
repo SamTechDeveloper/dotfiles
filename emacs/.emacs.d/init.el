@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 ;;; package -- Summary
 
 ;;; Commentary:
@@ -59,8 +61,8 @@
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (when (fboundp 'tooltip-mode)    (tooltip-mode    -1))
 
-(use-package auto-complete)
-;;(global-auto-complete-mode t)
+;; (use-package auto-complete)
+;; (global-auto-complete-mode t)
 
 (require 'which-func)
 (which-function-mode t)
@@ -118,6 +120,8 @@
 
 ;; Theme Ends ==
 
+(add-to-list 'auto-mode-alist '("/Makefile[^/]*\\'" . makefile-mode))
+
 ;; (use-package doom-modeline
 ;;   :ensure t
 ;;   :hook (after-init . doom-modeline-mode)
@@ -143,15 +147,17 @@
 (add-to-list 'auto-mode-alist '("\\.cgi\\'" . cperl-mode))
 (add-to-list 'auto-mode-alist '("\\.pm\\'"  . cperl-mode))
 (add-to-list 'auto-mode-alist '("\\.pl\\'"  . cperl-mode))
+(add-to-list 'auto-mode-alist '("\\.pl\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.cgi\\'" . web-mode))
 
 ;; 2. Multicolored Highlight Function
 (defun my-apply-highlights ()
   "This will add specific colors to different developer tags."
   (font-lock-add-keywords nil
-    '(("\\<\\(FIXME\\|XXX\\|DOUBT\\|TESTING\\|BUG\\):" 1 '(:foreground "#FF3131" :weight bold) t)
-      ("\\<\\(WARN\\):"        1 '(:foreground "yellow" :weight bold) t)
+    '(("\\<\\(FIXME\\|XXX\\|DOUBT\\|TESTING\\|BUG\\|error\\):" 1 '(:foreground "#FF3131" :weight bold) t)
+      ("\\<\\(WARN\\|warn\\):"        1 '(:foreground "yellow" :weight bold) t)
       ("\\<\\(TODO\\|FIX\\|FIXED\\|BUG_FIX\\):"        1 '(:foreground "green" :weight bold) t)
-      ("\\<\\(NOTE\\|INFO\\):"        1 '(:foreground "cyan" :weight bold) t))))
+      ("\\<\\(NOTE\\|INFO\\|info\\):"        1 '(:foreground "cyan" :weight bold) t))))
 
 ;; 3. Activate for C, C++, and Perl
 (add-hook 'c-mode-hook     'my-apply-highlights)
@@ -176,14 +182,16 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (show-paren-mode 1)
-(column-number-mode      1)
+(column-number-mode 1)
 
 ;; ----------------------------
 ;; Eglot + clangd
 ;; ----------------------------
 (require 'eglot)
-
-(add-hook 'c-mode-common-hook #'eglot-ensure)
+(add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
+(add-hook 'c-mode-hook 'eglot-ensure)
+(add-hook 'c++-mode-hook 'eglot-ensure)
+;;(add-hook 'c-mode-common-hook #'eglot-ensure)
 
 (setq eglot-inlay-hints-mode nil)
 (add-hook 'eglot-managed-mode-hook
@@ -191,6 +199,15 @@
             (eglot-inlay-hints-mode -1)))
 (setq eglot-stay-out-of '(imenu))
 
+;; Always visit files by their real (symlink-resolved) path so clangd's
+;; paths match the entries in compile_commands.json.
+(setq find-file-visit-truename t)
+
+;; ----------------------------
+;; Company mode
+;; ----------------------------
+(use-package company)
+(add-hook 'after-init-hook 'global-company-mode)
 
 ;; ----------------------------
 ;; Navigation (definition)
@@ -201,16 +218,19 @@
 ;;; ============================================================
 ;;; 11. FLYMAKE  (built-in; eglot feeds it diagnostics)
 ;;; ============================================================
+;;(use-package flymake)
+;;Show diagnostics as symbols in the left margin instead of the fringe.
+(setq flymake-indicator-type 'margins)
 
-(use-package flymake
-  :ensure nil
-  :hook (prog-mode . flymake-mode)
-  :bind (:map flymake-mode-map
-         ("M-n"   . flymake-goto-next-error)
-         ("M-p"   . flymake-goto-prev-error)
-         ("C-c e" . flymake-show-buffer-diagnostics))
-  :custom
-  (flymake-fringe-indicator-position 'right-fringe))
+;; (use-package flymake
+;;   :ensure nil
+;;   :hook (prog-mode . flymake-mode)
+;;   :bind (:map flymake-mode-map
+;;          ("M-n"   . flymake-goto-next-error)
+;;          ("M-p"   . flymake-goto-prev-error)
+;;          ("C-c e" . flymake-show-buffer-diagnostics))
+;;   :custom
+;;   (flymake-fringe-indicator-position 'right-fringe))
 
 ;; ----------------------------
 ;; Clean Eldoc (no minibuffer resizing)
@@ -220,8 +240,8 @@
 (setq max-mini-window-height 10)
 (global-eldoc-mode 1)
 
-(use-package eldoc-box
-  :hook (eglot-managed-mode . eldoc-box-hover-mode))
+;; (use-package eldoc-box
+;;   :hook (eglot-managed-mode . eldoc-box-hover-mode))
 ;;; End of minimal config
 
 
@@ -258,5 +278,12 @@
 
 (use-package git)
 (use-package git-gutter)
+
+(use-package polymode)
+
+(use-package xclip
+  :ensure t
+  :config
+  (xclip-mode 1)) ; Forces terminal Emacs to pipe M-w directly to your OS clipboard
 
 ;;; init.el ends here
