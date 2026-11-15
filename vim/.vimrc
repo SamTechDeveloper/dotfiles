@@ -17,13 +17,13 @@ set updatetime=300
 set number
 set relativenumber
 set cursorline
-set colorcolumn=80,120
+"set colorcolumn=80,120
 set signcolumn=yes
 set scrolloff=8
 set sidescrolloff=8
 set showmatch                   " briefly jump to matching bracket
 set laststatus=2                " always show statusline
-set noshowmode                  " mode shown in statusline instead
+"set noshowmode                  " mode shown in statusline instead
 
 " ============================================================
 "  Indentation  (C style: 4-space hard tabs)
