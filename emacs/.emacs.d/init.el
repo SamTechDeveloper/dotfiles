@@ -67,20 +67,11 @@
 (require 'use-package)
 (setq use-package-always-ensure t)  ;; Auto-install packages
 
-(add-to-list 'default-frame-alist
-             '(font . "JetBrainsMono Nerd Font-14"))
-(set-face-attribute 'default nil
-                    :font "JetBrainsMono Nerd Font-14"
-                    :weight 'normal)
-(set-fontset-font t 'symbol "JetBrainsMono Nerd Font" nil 'append)
-
-(add-to-list 'auto-mode-alist '("/Makefile[^/]*\\'" . makefile-mode))
-
 ;; Theme Starts ==
 ;;(use-package doom-themes)
 ;;(load-theme 'doom-one t)
 (use-package catppuccin-theme)
-(setq catppuccin-flavor 'mocha) ; or 'latte, 'macchiato, or 'mocha
+(setq catppuccin-flavor 'mocha) ; or 'frappe  'latte, 'macchiato, or 'mocha
 (load-theme 'catppuccin t)
 
 (defvar my/doom-one-current 'dark
@@ -117,7 +108,16 @@
 
 ;; Theme Ends ==
 
-(add-to-list 'auto-mode-alist '("/Makefile[^/]*\\'" . makefile-mode))
+;;=========================
+;;Font Configuration
+;;=========================
+(add-to-list 'default-frame-alist
+             '(font . "JetBrainsMono Nerd Font-14"))
+(set-face-attribute 'default nil
+                    :font "JetBrainsMono Nerd Font-14"
+                    :weight 'normal)
+(set-fontset-font t 'symbol "JetBrainsMono Nerd Font" nil 'append)
+
 
 ;; (use-package doom-modeline
 ;;   :ensure t
@@ -146,6 +146,7 @@
 (add-to-list 'auto-mode-alist '("\\.pl\\'"  . cperl-mode))
 (add-to-list 'auto-mode-alist '("\\.pl\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.cgi\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("/Makefile[^/]*\\'" . makefile-mode))
 
 ;; 2. Multicolored Highlight Function
 (defun my-apply-highlights ()
