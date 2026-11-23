@@ -1,7 +1,4 @@
-;; -*- lexical-binding: t; -*-
-
-;;; package -- Summary
-
+;;; package -- Summary ;; -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;
 ;;; Author: Sameer Ghanekar
@@ -191,7 +188,14 @@
 (add-to-list 'eglot-server-programs '((c++-mode c-mode) "clangd"))
 (add-hook 'c-mode-hook 'eglot-ensure)
 (add-hook 'c++-mode-hook 'eglot-ensure)
-;;(add-hook 'c-mode-common-hook #'eglot-ensure)
+(add-hook 'c-mode-common-hook #'eglot-ensure)
+
+;; Ignore clangd's semantic tokens; CC Mode font-lock does the coloring.
+;; clangd marks inactive #if/#ifdef regions as "comment" semantic tokens,
+;; which eglot paints with eglot-semantic-comment.
+(with-eval-after-load 'eglot
+  (add-to-list 'eglot-ignored-server-capabilities
+               :semanticTokensProvider))
 
 (setq eglot-inlay-hints-mode nil)
 (add-hook 'eglot-managed-mode-hook
@@ -213,22 +217,24 @@
 ;; Navigation (definition)
 ;; ----------------------------
 (global-set-key (kbd "M-.") #'xref-find-definitions)
-(global-set-key (kbd "M-,") #'xref-pop-marker-stack)
+(global-set-key (kbd "M-,") #'xref-go-back)
 
 ;;; ============================================================
 ;;; 11. FLYMAKE  (built-in; eglot feeds it diagnostics)
 ;;; ============================================================
 ;;(use-package flymake)
+
+(use-package flymake
+  :ensure nil
+  :hook (prog-mode . flymake-mode)
+  :bind (:map flymake-mode-map
+         ("M-n"   . flymake-goto-next-error)
+         ("M-p"   . flymake-goto-prev-error)
+         ("C-c e" . flymake-show-buffer-diagnostics)))
+
 ;;Show diagnostics as symbols in the left margin instead of the fringe.
 (setq flymake-indicator-type 'margins)
 
-;; (use-package flymake
-;;   :ensure nil
-;;   :hook (prog-mode . flymake-mode)
-;;   :bind (:map flymake-mode-map
-;;          ("M-n"   . flymake-goto-next-error)
-;;          ("M-p"   . flymake-goto-prev-error)
-;;          ("C-c e" . flymake-show-buffer-diagnostics))
 ;;   :custom
 ;;   (flymake-fringe-indicator-position 'right-fringe))
 
@@ -242,6 +248,7 @@
 
 ;; (use-package eldoc-box
 ;;   :hook (eglot-managed-mode . eldoc-box-hover-mode))
+
 ;;; End of minimal config
 
 
@@ -285,5 +292,9 @@
   :ensure t
   :config
   (xclip-mode 1)) ; Forces terminal Emacs to pipe M-w directly to your OS clipboard
+
+(use-package banner-comment
+  :commands (banner-comment)
+  :bind ("C-c h" . banner-comment))
 
 ;;; init.el ends here
