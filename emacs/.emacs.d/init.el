@@ -181,6 +181,8 @@
 (scroll-bar-mode -1)
 (show-paren-mode 1)
 (column-number-mode 1)
+;;Restore old mouse select behaviour
+(xterm-mouse-mode -1)
 
 ;; ----------------------------
 ;; Eglot + clangd
