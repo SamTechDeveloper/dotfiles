@@ -70,9 +70,20 @@
 ;; Theme Starts ==
 ;;(use-package doom-themes)
 ;;(load-theme 'doom-one t)
-(use-package catppuccin-theme)
-(setq catppuccin-flavor 'mocha) ; or 'frappe  'latte, 'macchiato, or 'mocha
-(load-theme 'catppuccin t)
+;; (use-package catppuccin-theme)
+;; (setq catppuccin-flavor 'mocha) ; or 'frappe  'latte, 'macchiato, or 'mocha
+;; (load-theme 'catppuccin t)
+
+;; (with-eval-after-load 'catppuccin-theme
+;;   (set-face-attribute 'font-lock-comment-face nil
+;;                       :foreground "#A6ADC8"
+;;                       :slant 'italic)
+
+;;   (set-face-attribute 'font-lock-comment-delimiter-face nil
+;;                       :foreground "#9399B2"
+;;                       :slant 'italic))
+
+(load-theme 'batppuccin-mocha)
 
 (defvar my/doom-one-current 'dark
   "Current doom-one theme variant.")
@@ -299,5 +310,27 @@
 (use-package banner-comment
   :commands (banner-comment)
   :bind ("C-c h" . banner-comment))
+
+;; ==========================================
+;; Doxymacs - Doxygen integration
+;; ==========================================
+
+(use-package doxymacs
+  :ensure nil
+
+  ;; Enable Doxymacs automatically in C/C++ buffers.
+  :hook (c-mode-common-hook . doxymacs-mode)
+
+  ;; Doxymacs keybindings.
+  :bind (:map c-mode-base-map
+              ("C-c d ?" . doxymacs-lookup)
+              ("C-c d r" . doxymacs-rescan-tags)
+              ("C-c d RET" . doxymacs-insert-command)
+              ("C-c d f" . doxymacs-insert-function-comment)
+              ("C-c d i" . doxymacs-insert-file-comment)
+              ("C-c d ;" . doxymacs-insert-member-comment)
+              ("C-c d m" . doxymacs-insert-blank-multiline-comment)
+              ("C-c d s" . doxymacs-insert-blank-singleline-comment)
+              ("C-c d @" . doxymacs-insert-grouping-comments)))
 
 ;;; init.el ends here
